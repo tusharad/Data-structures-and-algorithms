@@ -77,7 +77,21 @@ void deleteNode(node *head, int pos)
     curr = traverse(curr, pos - 1);
     temp = curr->next;
     curr->next = curr->next->next;
+    head->data--;
     free(temp);
+}
+
+void reverse(node *head)
+{
+    node *curr = head->next, *prev = NULL, *nex;
+    while (curr != NULL)
+    {
+        nex = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = nex;
+    }
+    head->next = prev;
 }
 
 void main()
@@ -87,5 +101,6 @@ void main()
     insertNode(head, 3, 100);
     printList(head);
     deleteNode(head, 4);
+    reverse(head);
     printList(head);
 }

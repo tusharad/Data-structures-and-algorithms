@@ -1,2 +1,5 @@
 LinkedList/LinkedList.exe
 LinkedList/a.exe
+LinkedList/LinkedList$Node.class
+.gitignore
+LinkedList/LinkedList.class

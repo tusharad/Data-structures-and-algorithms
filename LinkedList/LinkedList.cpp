@@ -30,6 +30,7 @@ public:
     void insertNode(int, int);
     Node *traverse(Node *, int);
     void deleteNode(int);
+    void reverse();
 };
 
 void List::deleteNode(int pos)
@@ -38,6 +39,7 @@ void List::deleteNode(int pos)
     curr = traverse(curr, pos - 1);
     temp = curr->next;
     curr->next = curr->next->next;
+    head->data--;
     delete temp;
 }
 
@@ -46,6 +48,19 @@ Node *List::traverse(Node *curr, int pos)
     for (int i = 0; i < pos; i++)
         curr = curr->next;
     return curr;
+}
+
+void List::reverse()
+{
+    Node *curr = head->next, *prev = NULL, *nex;
+    while (curr != NULL)
+    {
+        nex = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = nex;
+    }
+    head->next = prev;
 }
 
 void List::insertNode(int pos, int val)
@@ -96,9 +111,10 @@ int main()
 {
     List obj;
     obj.createList();
-    obj.insertNode(1, 100);
-    obj.printList();
-    obj.deleteNode(1);
+    //obj.insertNode(1, 100);
+    //obj.printList();
+    //obj.deleteNode(1);
+    obj.reverse();
     obj.printList();
     return 0;
 }
