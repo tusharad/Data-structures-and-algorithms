@@ -3,3 +3,6 @@ LinkedList/a.exe
 LinkedList/LinkedList$Node.class
 .gitignore
 LinkedList/LinkedList.class
+Stack/stack.exe
+Stack/StackList.class
+Stack/StackList$Node.class
