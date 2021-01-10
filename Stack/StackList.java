@@ -1,9 +1,9 @@
-public class StackList {
+public class StackList<E> {
     class Node {
         Node next;
-        int data;
+        E data;
 
-        Node(int val) {
+        Node(E val) {
             this.data = val;
         }
     }
@@ -14,19 +14,22 @@ public class StackList {
         return top == null;
     }
 
-    void push(int val) {
+    void push(E val) {
         Node temp = new Node(val);
         temp.next = top;
         top = temp;
     }
 
     void pop() {
+        if (isEmpty()) {
+            System.err.println("Stack UnderFlow");
+        }
         Node temp = top;
         top = top.next;
         temp.next = null;
     }
 
-    int peek() {
+    E peek() {
         return top.data;
     }
 
@@ -40,13 +43,15 @@ public class StackList {
     }
 
     public static void main(String[] args) {
-        StackList sl = new StackList();
-        sl.push(10);
-        sl.push(15);
-        sl.push(18);
+        StackList<String> sl = new StackList<String>();
+
+        sl.push("ABC");
+        sl.push("XYZ");
+        sl.push("PQR");
         sl.printStack();
         sl.pop();
-        System.out.println(sl.peek());
+        System.out.println("To be poped element: " + sl.peek());
         sl.printStack();
+
     }
 }
