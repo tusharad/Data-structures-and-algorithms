@@ -15,15 +15,9 @@ public:
     void printStack();
 };
 
-void Stack::init()
-{
-    top = NULL;
-}
+void Stack::init() { top = NULL; }
 
-int Stack::isEmpty()
-{
-    return top == NULL;
-}
+int Stack::isEmpty() { return top == NULL; }
 
 void Stack::push(int val)
 {
@@ -46,10 +40,7 @@ void Stack::pop()
     free(temp);
 }
 
-int Stack::peek()
-{
-    return top->data;
-}
+int Stack::peek() { return top->data; }
 
 void Stack::printStack()
 {
