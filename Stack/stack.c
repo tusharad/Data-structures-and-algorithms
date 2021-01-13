@@ -3,89 +3,67 @@
 
 typedef struct Stack
 {
-    struct Stack *next;
-    int data;
+  struct Stack *next;
+  int data;
 } stack;
 
 stack *top;
 
 void init()
 {
-    top = NULL;
+  top = NULL;
 }
 
 int isEmpty()
 {
-    return top == NULL;
+  return top == NULL;
 }
 
 void push(int val)
 {
-    stack *temp = (stack *)malloc(sizeof(stack));
-    temp->data = val;
-    temp->next = top;
-    top = temp;
+  stack *temp = (stack *)malloc(sizeof(stack));
+  temp->data = val;
+  temp->next = top;
+  top = temp;
 }
 
 void pop()
 {
-    if (isEmpty())
-    {
-        printf("Stack UnderFlow!");
-        return;
-    }
-    stack *temp = top;
-    top = top->next;
-    temp->next = NULL;
-    free(temp);
+  if (isEmpty())
+  {
+    printf("Stack UnderFlow!");
+    return;
+  }
+  stack *temp = top;
+  top = top->next;
+  temp->next = NULL;
+  free(temp);
 }
 
 int peek()
 {
-    return top->data;
-}
-
-void insert_at_bottom(int val){
-  if(isEmpty()){
-    push(val);
-  }
-  else{
-    int x = peek();
-    pop();
-    insert_at_bottom(val);
-    push(x);
-  }
-}
-
-void reverse(){
-  if(!isEmpty()){
-    int x = peek();
-    pop();
-    reverse();
-    insert_at_bottom(x);
-  }
+  return top->data;
 }
 
 void printStack()
 {
-    stack *curr = top;
-    while (curr != NULL)
-    {
-        printf("%d->", curr->data);
-        curr = curr->next;
-    }
-    printf("\n");
+  stack *curr = top;
+  while (curr != NULL)
+  {
+    printf("%d->", curr->data);
+    curr = curr->next;
+  }
+  printf("\n");
 }
 
 void main()
 {
-    init();
-    push(20);
-    push(30);
-    push(40);
-    reverse();
-    printStack();
- //   pop();
-  //  printStack();
-    //printf("%d\n", peek());
+  init();
+  push(20);
+  push(30);
+  push(40);
+  printStack();
+  pop();
+  printStack();
+  printf("%d\n", peek());
 }
