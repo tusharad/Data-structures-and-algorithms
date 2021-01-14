@@ -19,8 +19,7 @@ void Stack::init() { top = NULL; }
 
 int Stack::isEmpty() { return top == NULL; }
 
-void Stack::push(int val)
-{
+void Stack::push(int val){
     Stack *temp = new Stack();
     temp->data = val;
     temp->next = top;

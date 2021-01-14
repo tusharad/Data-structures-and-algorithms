@@ -39,7 +39,7 @@ void removeQueue()
         return;
     }
     queue *temp = front;
-    front = front->next;
+   front = front->next;
     printf("Deleted node is %d\n", temp->data);
     free(temp);
 }

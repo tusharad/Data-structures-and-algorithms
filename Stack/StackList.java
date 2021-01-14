@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class StackList<E> {
     class Node {
         Node next;
@@ -10,7 +12,7 @@ public class StackList<E> {
 
     private Node top;
 
-    boolean isEmpty() {
+    boolean isEmpty(){
         return top == null;
     }
 
@@ -29,7 +31,7 @@ public class StackList<E> {
         temp.next = null;
     }
 
-    E peek() {
+    E peek(){
         return top.data;
     }
 
@@ -44,7 +46,7 @@ public class StackList<E> {
 
     public static void main(String[] args) {
         StackList<String> sl = new StackList<String>();
-
+        Scanner in = new Scanner(System.in);
         sl.push("ABC");
         sl.push("XYZ");
         sl.push("PQR");

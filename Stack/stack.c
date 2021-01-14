@@ -74,18 +74,19 @@ void printStack()
     printf("%d->", curr->data);
     curr = curr->next;
   }
-  printf("\n");
+    printf("Hello World!");
 }
 
-void main()
+int main()
 {
   init();
   push(20);
   push(30);
   push(40);
-  reverse();
+  //reverse();
   printStack();
- // pop();
- // printStack();
-  //printf("%d\n", peek());
+  pop();
+  printStack();
+  printf("%d\n", peek());
+  return 0;
 }
