@@ -12,7 +12,7 @@ public class StackList<E> {
 
     private Node top;
 
-    boolean isEmpty(){
+    boolean isEmpty() {
         return top == null;
     }
 
@@ -31,7 +31,7 @@ public class StackList<E> {
         temp.next = null;
     }
 
-    E peek(){
+    E peek() {
         return top.data;
     }
 
@@ -54,6 +54,6 @@ public class StackList<E> {
         sl.pop();
         System.out.println("To be poped element: " + sl.peek());
         sl.printStack();
-
+        in.close();
     }
 }

@@ -45,11 +45,14 @@ int peek()
   return top->data;
 }
 
-void insert_at_bottom(int val){
-  if(isEmpty()){
+void insert_at_bottom(int val)
+{
+  if (isEmpty())
+  {
     push(val);
   }
-  else{
+  else
+  {
     int x = peek();
     pop();
     insert_at_bottom(val);
@@ -57,8 +60,10 @@ void insert_at_bottom(int val){
   }
 }
 
-void reverse(){
-  if(!isEmpty()){
+void reverse()
+{
+  if (!isEmpty())
+  {
     int x = peek();
     pop();
     reverse();
@@ -74,7 +79,7 @@ void printStack()
     printf("%d->", curr->data);
     curr = curr->next;
   }
-    printf("Hello World!");
+  printf("\n");
 }
 
 int main()
