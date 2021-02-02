@@ -28,7 +28,7 @@ public class LinkedList {
     }
 
     void createList() {
-        System.out.print("Enter length of list:");
+        System.out.println("Testing");
         int n = in.nextInt();
         head = new Node(n);
 

@@ -88,7 +88,7 @@ void List::createList()
     curr = head;
     for (int i = 0; i < n; i++)
     {
-        cout << "Enter " << i + 1 << "th value: ";
+        cout<<"Enter "<<i+1<<"th value";
         cin >> val;
         temp = new Node(val);
         curr->next = temp;

@@ -7,10 +7,11 @@ typedef struct Node
     int data;
 } node;
 
-void printList(node *curr)
+void printList(node *head)
 {
+    node *curr = head;
     curr = curr->next;
-    while (curr != NULL)
+    while (curr != head)
     {
         printf("%d-> ", curr->data);
         curr = curr->next;
@@ -42,7 +43,7 @@ node *createList()
         curr->next = temp;
         curr = temp;
     }
-    //curr->next = head; #For Circular List
+    curr->next = head;
     return head;
 }
 
